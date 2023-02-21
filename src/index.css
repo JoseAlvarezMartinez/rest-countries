@@ -1,11 +1,41 @@
 :root {
-  --darkBlue: hsl(209, 23%, 22%);
-  --darkModeBackground: hsl(207, 26%, 17%);
-  --LightModeText: hsl(200, 15%, 8%);
   --LightModeInput: hsl(0, 0%, 52%);
-  --LightModeBackground: hsl(0, 0%, 98%);
   --Elements: hsl(0, 0%, 100%);
 }
-*{
-  font-family: 'Nunito Sans', sans-serif;
+* {
+  font-family: "Nunito Sans", sans-serif;
+}
+h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+}
+.darkModeHeader {
+  background-color: hsl(209, 23%, 22%);
+}
+.lightModeHeader {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.356);
+}
+.icono:hover {
+  cursor: pointer;
+}
+.pais-card{
+  width: 16rem;
+  margin: 2rem auto;
+}
+.pais-card img{
+  width: 90%;
+  height: 100%;
+  border-radius: .5rem;
+}
+.pais-card p{
+  font-weight: 600;
+}
+.pais-card p span{
+  font-weight: 200;
 }
