@@ -29,7 +29,7 @@ header {
   margin: 2rem auto;
 }
 .pais-card img{
-  width: 90%;
+  width: 96%;
   height: 100%;
   border-radius: .5rem;
 }
@@ -38,4 +38,23 @@ header {
 }
 .pais-card p span{
   font-weight: 200;
+}
+.buscador{
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  border: 1px solid rgba(128, 128, 128, 0.288);
+  border-radius: .4rem;
+  padding: .4rem 1rem;
+  width: 80%;
+}
+.buscador input{
+  border: none;
+  padding: .5rem 1rem;
+  border-radius: .4rem;
+  margin-left: .4rem;
+  outline: none;
+  background-color: transparent;
 }
