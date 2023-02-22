@@ -15,7 +15,7 @@ header {
   justify-content: space-between;
   padding: 2rem 1rem;
 }
-a{
+a {
   text-decoration: none;
   color: unset;
 }
@@ -28,37 +28,49 @@ a{
 .icono:hover {
   cursor: pointer;
 }
-.pais-card{
+.pais-card {
   width: 16rem;
   margin: 2rem auto;
 }
-.pais-card img{
+.pais-card img {
   width: 96%;
   height: 100%;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
-.pais-card p{
+.pais-card p {
   font-weight: 600;
 }
-.pais-card p span{
+.pais-card p span {
   font-weight: 200;
 }
-.buscador{
+.buscador {
   display: flex;
   align-items: center;
   margin-left: 1rem;
   margin-top: 2rem;
   margin-bottom: 0;
   border: 1px solid rgba(128, 128, 128, 0.288);
-  border-radius: .4rem;
-  padding: .4rem 1rem;
+  border-radius: 0.4rem;
+  padding: 0.4rem 1rem;
   width: 80%;
 }
-.buscador input{
+.buscador input {
   border: none;
-  padding: .5rem 1rem;
-  border-radius: .4rem;
-  margin-left: .4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  margin-left: 0.4rem;
   outline: none;
   background-color: transparent;
 }
+.select-region {
+  margin-left: 1rem;
+  margin-top: 2rem;
+  padding: .5rem 1rem;
+  border: 1px solid rgba(128, 128, 128, 0.288);
+  border-radius: 0.4rem;
+  outline: none;
+}
+select option{
+  border: none;
+}
+

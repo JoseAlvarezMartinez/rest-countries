@@ -8,19 +8,32 @@ export function loader() {
 }
 const Index = () => {
   const paisesInformacion = useLoaderData();
+
   const [inputFilter, setInputFilter] = useState("");
   const [paisesFiltrados, setPaisesFiltrados] = useState([]);
+
+  const [selectFilter,setSelectFilter] = useState("")
+
   useEffect(() => {
     if (inputFilter) {
       const filtrarPais = paisesInformacion.filter((pais) =>
-        pais.name.toLowerCase().includes(inputFilter.toLowerCase())
+        pais.name.toLowerCase().includes(inputFilter.toLowerCase()) && pais.region.toLowerCase().includes(selectFilter.toLowerCase())
       );
       setPaisesFiltrados(filtrarPais);
     }
-  }, [inputFilter]);
+  }, [inputFilter,selectFilter]);
+
   return (
     <>
       <Outlet />
+      <select className="select-region" onChange={(e) => setSelectFilter(e.target.value)}>
+        <option value="">Select by Region</option>
+        <option className="probando" value="africa">Africa</option>
+        <option value="americas">America</option>
+        <option value="asia">Asia</option>
+        <option value="europe">Europe</option>
+        <option value="oceania">Oceania</option>
+      </select>
       <div className="buscador">
         <AiOutlineSearch size={"1.5rem"} />
         <input
