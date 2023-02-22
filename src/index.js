@@ -1,24 +1,29 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import {loader as PaisesLoader} from "./Pages/Index"
+import { loader as PaisesLoader } from "./Pages/Index";
 import NavBar from "./components/NavBar";
 import Index from "./Pages/Index";
+import PaisDetalle from "./components/PaisDetalle";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Index />,
-    loader:PaisesLoader,
-    children:[
+    loader: PaisesLoader,
+    children: [
       {
-        index:true,
-        element:<NavBar/>
-      }
-    ]
+        index: true,
+        element: <NavBar />,
+      },
+    ],
   },
+  {
+    path:"/pais/:id",
+    element:<PaisDetalle/>
+  }
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
