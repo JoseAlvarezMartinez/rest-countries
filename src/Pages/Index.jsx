@@ -33,7 +33,7 @@ const Index = () => {
         className="select-region"
         onChange={(e) => setSelectFilter(e.target.value)}
       >
-        <option value="vacio">Select by Region</option>
+        <option value="">Select by Region</option>
         <option value="africa">Africa</option>
         <option value="americas">America</option>
         <option value="asia">Asia</option>
@@ -49,6 +49,7 @@ const Index = () => {
           type="text"
           placeholder="Search for a country..."
         />
+        <p className="buscador-eliminar" onClick={() => setInputFilter("")}>X</p>
       </div>
       {inputFilter.length >= 1 &&
         paisesFiltrados.map((pais, index) => (
@@ -58,15 +59,12 @@ const Index = () => {
         ))}
 
      
-      {paisesFiltrados.length > 0 ? (
+      {!inputFilter && (
         paisesInformacion.map((pais, index) => (
           <Link key={index} to={`/pais/${pais.name}`}>
             <PaisCard pais={pais} />
           </Link>
-        ))
-      ) : (
-        <h2 className="error">The selected country does not exist or is not in that region.</h2>
-      )}
+        )))}
     </>
   );
 };

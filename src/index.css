@@ -62,6 +62,9 @@ a {
   outline: none;
   background-color: transparent;
 }
+.buscador-eliminar:hover{
+  cursor: pointer;
+}
 .select-region {
   margin-left: 1rem;
   margin-top: 2rem;
