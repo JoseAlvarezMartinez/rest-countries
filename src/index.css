@@ -70,7 +70,11 @@ a {
   border-radius: 0.4rem;
   outline: none;
 }
-select option{
-  border: none;
+.error{
+    text-align: center;
+    font-weight: 400;
+    margin:  1rem;
+    display: flex;
+    align-items: center;
+    height: 47vh;
 }
-

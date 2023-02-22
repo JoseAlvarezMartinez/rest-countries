@@ -3,12 +3,15 @@ import { useState, useEffect } from "react";
 const NavBar = () => {
   const [darkMode, setDarkMode] = useState(false);
   useEffect(() => {
-    const placeholder = document.querySelector("#input-buscador")
+    const placeholder = document.querySelector("#input-buscador");
+    const filter = document.querySelector("#select");
     document.body.style.backgroundColor = darkMode
       ? "hsl(207, 26%, 17%)"
       : "white";
     document.body.style.color = darkMode ? "white" : "black";
-    placeholder.style.color = darkMode ? "white" : "black"
+    placeholder.style.color = darkMode ? "white" : "black";
+    filter.style.backgroundColor = darkMode ? "hsl(207, 26%, 17%)" : "white";
+    filter.style.color = darkMode ? "white" : "black";
   }, [darkMode]);
   return (
     <header className={`${darkMode ? "darkModeHeader" : "lightModeHeader"}`}>
