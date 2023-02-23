@@ -53,7 +53,7 @@ const Index = () => {
       </div>
       {inputFilter.length >= 1 &&
         paisesFiltrados.map((pais, index) => (
-          <Link key={index} to={`/pais/${pais.name}`}>
+          <Link key={index} to={`/pais/${pais.name}`} state={pais}>
             <PaisCard pais={pais} />
           </Link>
         ))}
@@ -61,7 +61,7 @@ const Index = () => {
      
       {!inputFilter && (
         paisesInformacion.map((pais, index) => (
-          <Link key={index} to={`/pais/${pais.name}`}>
+          <Link key={index} to={`/pais/${pais.name}`} state={pais}>
             <PaisCard pais={pais} />
           </Link>
         )))}
