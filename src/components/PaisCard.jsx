@@ -3,10 +3,12 @@ const PaisCard = ({ pais }) => {
     <section className="pais-card">
       <img className="pais-card-img" src={pais.flag} alt="Imagen del pais" />
       <h2>{pais.name}</h2>
-      <p className={"pais-card-parrafo"}>
-        Population:{" "}
-        <span className={"pais-card-p-span"}>{pais.population.toLocaleString()}</span>
-      </p>
+      {pais.population && (
+        <p className={"pais-card-parrafo"}>
+          Population:{" "}
+          <span className={"pais-card-p-span"}>{pais.population.toLocaleString()}</span>
+        </p>
+      )}
       <p className={"pais-card-parrafo"}>
         Region: <span className={"pais-card-p-span"}>{pais.region}</span>
       </p>
