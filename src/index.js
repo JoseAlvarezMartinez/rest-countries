@@ -4,7 +4,6 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { loader as PaisesLoader } from "./Pages/Index";
-import NavBar from "./components/NavBar";
 import Index from "./Pages/Index";
 import PaisDetalle from "./components/PaisDetalle";
 
@@ -16,14 +15,18 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <NavBar />,
+        element: (
+          <header>
+            <h1>Where in the world?</h1>
+          </header>
+        ),
       },
     ],
   },
   {
-    path:"/pais/:id",
-    element:<PaisDetalle/>
-  }
+    path: "/pais/:id",
+    element: <PaisDetalle />,
+  },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

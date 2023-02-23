@@ -49,7 +49,9 @@ const Index = () => {
           type="text"
           placeholder="Search for a country..."
         />
-        <p className="buscador-eliminar" onClick={() => setInputFilter("")}>X</p>
+        <p className="buscador-eliminar" onClick={() => setInputFilter("")}>
+          X
+        </p>
       </div>
       {inputFilter.length >= 1 &&
         paisesFiltrados.map((pais, index) => (
@@ -58,13 +60,18 @@ const Index = () => {
           </Link>
         ))}
 
-     
-      {!inputFilter && (
+      {!inputFilter &&
         paisesInformacion.map((pais, index) => (
           <Link key={index} to={`/pais/${pais.name}`} state={pais}>
             <PaisCard pais={pais} />
           </Link>
-        )))}
+        ))}
+
+      {paisesFiltrados.length === 0 && (
+        <h2 className="error">
+          The selected country does not exist or is not in that region.
+        </h2>
+      )}
     </>
   );
 };
