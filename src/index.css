@@ -47,17 +47,17 @@ a {
 .buscador {
   display: flex;
   align-items: center;
-  justify-content: center;
+
   border: 1px solid rgba(128, 128, 128, 0.288);
   border-radius: 0.4rem;
   width: 20rem;
-  min-width: 10rem;
-  margin: 1rem auto;
+
+  margin-top: 1rem;
 }
+
 .contenedor {
-  margin: 0 auto;
-  width: 20rem;
-  min-width: 10rem;
+  margin: 0;
+  width: 100%;
 }
 .buscador svg {
   padding-left: 1rem;
@@ -124,18 +124,36 @@ a {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+}
+.buscadores-responsive {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
 }
 @media only screen and (min-width: 600px) {
+  .tablet-design .pais-card-img {
+    width: 27rem;
+    height: 100%;
+  }
+  .limitrofes-paises {
+    margin-bottom: 2rem;
+  }
+  .border-countries {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+  .limitrofes {
+    margin-left: 0;
+  }
   .buscadores-responsive {
     display: flex;
     align-items: center;
+    flex-direction: row;
     justify-content: space-between;
     margin: 2rem;
     gap: 2rem;
-  }
-  .contenedor {
-    margin: 0;
-    width: 100%;
   }
   .buscador,
   .select-region,
@@ -147,11 +165,19 @@ a {
     grid-template-columns: repeat(2, 1fr);
   }
   .contenedor-pais {
-    width: 100%;
+    min-width: 30rem;
+    width: 80%;
+    margin: 0 auto;
   }
 }
 @media only screen and (min-width: 900px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .tablet-design {
+    display: flex;
+  }
+  .testing {
+    margin-left: 6rem;
   }
 }
