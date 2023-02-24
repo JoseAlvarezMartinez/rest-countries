@@ -28,50 +28,59 @@ const Index = () => {
   return (
     <>
       <Outlet />
-      <select
-        id="select"
-        className="select-region"
-        onChange={(e) => setSelectFilter(e.target.value)}
-      >
-        <option value="">Select by Region</option>
-        <option value="africa">Africa</option>
-        <option value="americas">America</option>
-        <option value="asia">Asia</option>
-        <option value="europe">Europe</option>
-        <option value="oceania">Oceania</option>
-      </select>
-      <div className="buscador">
-        <AiOutlineSearch size={"1.5rem"} />
-        <input
-          onChange={(e) => setInputFilter(e.target.value)}
-          value={inputFilter}
-          id={"input-buscador"}
-          type="text"
-          placeholder="Search for a country..."
-        />
-        <p className="buscador-eliminar" onClick={() => setInputFilter("")}>
-          X
-        </p>
+      <div className="contenedor">
+        <div className="buscadores-responsive">
+          <select
+            id="select"
+            className="select-region"
+            onChange={(e) => setSelectFilter(e.target.value)}
+          >
+            <option value="">Select by Region</option>
+            <option value="africa">Africa</option>
+            <option value="americas">America</option>
+            <option value="asia">Asia</option>
+            <option value="europe">Europe</option>
+            <option value="oceania">Oceania</option>
+          </select>
+          <div className="buscador">
+            <AiOutlineSearch size={"1.5rem"} />
+            <input
+              onChange={(e) => setInputFilter(e.target.value)}
+              value={inputFilter}
+              id={"input-buscador"}
+              type="text"
+              placeholder="Search for a country..."
+            />
+            <p className="buscador-eliminar" onClick={() => setInputFilter("")}>
+              X
+            </p>
+          </div>
+        </div>
+        <main className="grid">
+          {inputFilter.length >= 1 &&
+            paisesFiltrados.map((pais, index) => (
+              <section key={index} className=" pais-card">
+                <Link to={`/pais/${pais.name}`} state={pais}>
+                  <PaisCard pais={pais} />
+                </Link>
+              </section>
+            ))}
+
+          {!inputFilter &&
+            paisesInformacion.map((pais, index) => (
+              <section key={index} className=" pais-card">
+                <Link to={`/pais/${pais.name}`} state={pais}>
+                  <PaisCard pais={pais} />
+                </Link>
+              </section>
+            ))}
+        </main>
+        {paisesFiltrados.length === 0 && (
+          <h2 className="error">
+            The selected country does not exist or is not in that region.
+          </h2>
+        )}
       </div>
-      {inputFilter.length >= 1 &&
-        paisesFiltrados.map((pais, index) => (
-          <Link key={index} to={`/pais/${pais.name}`} state={pais}>
-            <PaisCard pais={pais} />
-          </Link>
-        ))}
-
-      {!inputFilter &&
-        paisesInformacion.map((pais, index) => (
-          <Link key={index} to={`/pais/${pais.name}`} state={pais}>
-            <PaisCard pais={pais} />
-          </Link>
-        ))}
-
-      {paisesFiltrados.length === 0 && (
-        <h2 className="error">
-          The selected country does not exist or is not in that region.
-        </h2>
-      )}
     </>
   );
 };

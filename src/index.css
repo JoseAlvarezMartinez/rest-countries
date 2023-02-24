@@ -13,21 +13,29 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding:1rem;
+  padding: 1rem;
   border-bottom: 1px solid rgba(128, 128, 128, 0.699);
 }
 a {
   text-decoration: none;
   color: unset;
 }
-
+.card-padding {
+  padding-left: 1rem;
+}
 .pais-card {
-  width: 16rem;
+  max-width: 16rem;
   margin: 2rem auto;
+  border: 1px solid rgba(128, 128, 128, 0.288);
+  padding-bottom: 1rem;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.pais-card:hover {
+  transform: scale(1.05);
 }
 .pais-card-img {
-  width: 96%;
-  height: 100%;
+  width: 100%;
   border-radius: 0.5rem;
 }
 .pais-card-parrafo {
@@ -39,13 +47,20 @@ a {
 .buscador {
   display: flex;
   align-items: center;
-  margin-left: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 0;
+  justify-content: center;
   border: 1px solid rgba(128, 128, 128, 0.288);
   border-radius: 0.4rem;
-  padding: 0.4rem 1rem;
-  width: 80%;
+  width: 20rem;
+  min-width: 10rem;
+  margin: 1rem auto;
+}
+.contenedor {
+  margin: 0 auto;
+  width: 20rem;
+  min-width: 10rem;
+}
+.buscador svg {
+  padding-left: 1rem;
 }
 .buscador input {
   border: none;
@@ -59,7 +74,6 @@ a {
   cursor: pointer;
 }
 .select-region {
-  margin-left: 1rem;
   margin-top: 2rem;
   padding: 0.5rem 1rem;
   border: 1px solid rgba(128, 128, 128, 0.288);
@@ -72,7 +86,8 @@ a {
   margin: 1rem;
   display: flex;
   align-items: center;
-  height: 47vh;
+  height: 50vh;
+  justify-content: center;
 }
 .volver-btn {
   background-color: #fff;
@@ -109,4 +124,34 @@ a {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+}
+@media only screen and (min-width: 600px) {
+  .buscadores-responsive {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem;
+    gap: 2rem;
+  }
+  .contenedor {
+    margin: 0;
+    width: 100%;
+  }
+  .buscador,
+  .select-region,
+  .topLevel {
+    margin: 0;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contenedor-pais {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
